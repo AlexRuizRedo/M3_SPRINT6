@@ -17,7 +17,7 @@ import java.awt.CardLayout;
 import javax.swing.JSeparator;
 import java.awt.Cursor;
 
-public class Dashboard2 extends JFrame {
+public class Dashboard extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
@@ -31,34 +31,34 @@ public class Dashboard2 extends JFrame {
 	final static String PROJECTSPANEL = "Panell de projectes";
 	final static String INCIDENTSPANEL = "Panell de incidencies";
 	final static String INVOICESPANEL = "Panell de factures";
-	final static String MESSAGESPANEL = "Panell de missatges";
 	final static String RESERVATIONSPANEL = "Panell de reserves";
 	final static String TASKSPANEL = "Panell de tasques";
 	final static String RESOURCESPANEL = "Panell de recursos";
 	final static String DOCUMENTSPANEL = "Panell de documents";
+	final static String MESSAGESPANEL = "Panell de missatges";
 
 	final static String TESTPANEL = "Panell de prova";
 
 	DashboardPanel dashboardPanel = new DashboardPanel();
-	//	UsersPanel usersPanel = new UsersPanel();
+	UsersPanel usersPanel = new UsersPanel();
 	MachinesPanel machinesPanel = new MachinesPanel();
-	//	MaterialsPanel materialsPanel = new MaterialsPanel();
-	//	ProposalsPanel proposalsPanel = new ProposalsPanel();
+	MaterialsPanel materialsPanel = new MaterialsPanel();
+	ProposalsPanel proposalsPanel = new ProposalsPanel();
 	ProjectsPanel projectsPanel = new ProjectsPanel();
-	//	IncidentsPanel incidentsPanel = new IncidentsPanel();
-	//	InvoicesPanel invoicesPanel = new InvoicesPanel();
-	//	MessagesPanel messagesPanel = new MessagesPanel();
+	IncidentsPanel incidentsPanel = new IncidentsPanel();
+	InvoicesPanel invoicesPanel = new InvoicesPanel();
 	ReservationsPanel reservationsPanel = new ReservationsPanel();
-	//	TasksPanel tasksPanel = new TasksPanel();
-	//	ResourcesPanel resourcesPanel = new ResourcesPanel();
-	//	DocumentsPanel documentsPanel = new DocumentsPanel();
+	TasksPanel tasksPanel = new TasksPanel();
+	ResourcesPanel resourcesPanel = new ResourcesPanel();
+	DocumentsPanel documentsPanel = new DocumentsPanel();
+	MessagesPanel messagesPanel = new MessagesPanel();
 
 	TestPanel testPanel = new TestPanel();
 
 	/**
 	 * Create the frame.
 	 */
-	public Dashboard2() {
+	public Dashboard() {
 		setResizable(false);
 		setTitle("Client SQL - Initlab");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,13 +76,13 @@ public class Dashboard2 extends JFrame {
 		panel.setLayout(null);
 
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon(Dashboard2.class.getResource("/com/alumne/images/LogoBlau1_2.png")));
+		logo.setIcon(new ImageIcon(Dashboard.class.getResource("/com/alumne/images/LogoBlau1_2.png")));
 		logo.setBounds(40, 25, 118, 50);
 		panel.add(logo);
 
 
 		JLabel logoutBtn = new JLabel("Tancar sessió");
-		logoutBtn.setIcon(new ImageIcon(Dashboard2.class.getResource("/com/alumne/images/logout-24.png")));
+		logoutBtn.setIcon(new ImageIcon(Dashboard.class.getResource("/com/alumne/images/logout-24.png")));
 		logoutBtn.setBounds(12, 527, 119, 24);
 		panel.add(logoutBtn);
 		logoutBtn.addMouseListener(new MouseAdapter() {
@@ -113,7 +113,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, USERSPANEL);
 			}
 		});
 		btnToUsers.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -159,7 +159,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, MATERIALSPANEL);
 			}
 		});
 		btnToMaterials.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -182,7 +182,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, PROPOSALSPANEL);
 			}
 		});
 		btnToProposals.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -228,7 +228,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, INCIDENTSPANEL);
 			}
 		});
 		btnToIncidents.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -251,7 +251,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, INVOICESPANEL);
 			}
 		});
 		btnToInvoices.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -297,7 +297,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, TASKSPANEL);
 			}
 		});
 		btnToTasks.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -320,7 +320,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, RESOURCESPANEL);
 			}
 		});
 		btnToResources.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -343,7 +343,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, DOCUMENTSPANEL);
 			}
 		});
 		btnToDocuments.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -366,7 +366,7 @@ public class Dashboard2 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
-				c1.show(panel_2, TESTPANEL);
+				c1.show(panel_2, MESSAGESPANEL);
 			}
 		});
 		btnToMessages.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -386,18 +386,18 @@ public class Dashboard2 extends JFrame {
 
 		//ACCES A BOTONS
 		panel_2.add(dashboardPanel, DASHBOARDPANEL);
-		//		panel_2.add(usersPanel, USERSPANEL);
+		panel_2.add(usersPanel, USERSPANEL);
 		panel_2.add(machinesPanel, MACHINESPANEL);
-		//		panel_2.add(materialsPanel, MATERIALSPANEL);
-		//		panel_2.add(proposalsPanel, PROPOSALSPANEL);
+		panel_2.add(materialsPanel, MATERIALSPANEL);
+		panel_2.add(proposalsPanel, PROPOSALSPANEL);
 		panel_2.add(projectsPanel, PROJECTSPANEL);
-		//		panel_2.add(incidentsPanel, INCIDENTSPANEL);
-		//		panel_2.add(invoicesPanel, INVOICESPANEL);
-		//		panel_2.add(messagesPanel, MESSAGESPANEL);
+		panel_2.add(incidentsPanel, INCIDENTSPANEL);
+		panel_2.add(invoicesPanel, INVOICESPANEL);
 		panel_2.add(reservationsPanel, RESERVATIONSPANEL);
-		//		panel_2.add(tasksPanel, TASKSPANEL);
-		//		panel_2.add(resourcesPanel, RESOURCESPANEL);
-		//		panel_2.add(documentsPanel, DOCUMENTSPANEL);
+		panel_2.add(tasksPanel, TASKSPANEL);
+		panel_2.add(resourcesPanel, RESOURCESPANEL);
+		panel_2.add(documentsPanel, DOCUMENTSPANEL);
+		panel_2.add(messagesPanel, MESSAGESPANEL);
 
 		panel_2.add(testPanel, TESTPANEL);
 
@@ -413,7 +413,18 @@ public class Dashboard2 extends JFrame {
 			@Override public void mouseExited(MouseEvent e) {dashboardPanel.btnToMachines.setBackground(new Color(200, 201, 203));}
 		});
 
-		//BOTONS DEL ALTRES PANELS	
+		//BOTONS DEL ALTRES PANELS
+		usersPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {usersPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {usersPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {usersPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+
 		machinesPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				CardLayout c1 = (CardLayout)(panel_2.getLayout());
@@ -423,6 +434,28 @@ public class Dashboard2 extends JFrame {
 			@Override public void mousePressed(MouseEvent e) {machinesPanel.btnToDashboard.setBackground(Color.GRAY);}
 			@Override public void mouseEntered(MouseEvent e) {machinesPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
 			@Override public void mouseExited(MouseEvent e) {machinesPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		materialsPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {materialsPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {materialsPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {materialsPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		proposalsPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {proposalsPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {proposalsPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {proposalsPanel.btnToDashboard.setBackground(Color.WHITE);}
 		});
 
 		projectsPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
@@ -435,6 +468,28 @@ public class Dashboard2 extends JFrame {
 			@Override public void mouseEntered(MouseEvent e) {projectsPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
 			@Override public void mouseExited(MouseEvent e) {projectsPanel.btnToDashboard.setBackground(Color.WHITE);}
 		});
+		
+		incidentsPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {incidentsPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {incidentsPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {incidentsPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		invoicesPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {invoicesPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {invoicesPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {invoicesPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
 
 		reservationsPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -445,6 +500,50 @@ public class Dashboard2 extends JFrame {
 			@Override public void mousePressed(MouseEvent e) {reservationsPanel.btnToDashboard.setBackground(Color.GRAY);}
 			@Override public void mouseEntered(MouseEvent e) {reservationsPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
 			@Override public void mouseExited(MouseEvent e) {reservationsPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		tasksPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {tasksPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {tasksPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {tasksPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		resourcesPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {resourcesPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {resourcesPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {resourcesPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		documentsPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {documentsPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {documentsPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {documentsPanel.btnToDashboard.setBackground(Color.WHITE);}
+		});
+		
+		messagesPanel.btnToDashboard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				CardLayout c1 = (CardLayout)(panel_2.getLayout());
+				c1.show(panel_2, DASHBOARDPANEL);
+			}
+
+			@Override public void mousePressed(MouseEvent e) {messagesPanel.btnToDashboard.setBackground(Color.GRAY);}
+			@Override public void mouseEntered(MouseEvent e) {messagesPanel.btnToDashboard.setBackground(Color.LIGHT_GRAY);}
+			@Override public void mouseExited(MouseEvent e) {messagesPanel.btnToDashboard.setBackground(Color.WHITE);}
 		});
 	}
 }

@@ -118,7 +118,7 @@ public class Login extends JFrame {
 		loginBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Dashboard2 dashboard = new Dashboard2();
+				Dashboard dashboard = new Dashboard();
 				dashboard.setVisible(true);
 				dashboard.setLocationRelativeTo(null);
 				dispose();
