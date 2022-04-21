@@ -32,7 +32,7 @@ public class MachinesPanel extends JPanel {
 		btnToDashboard.setBounds(13, 12, 138, 34);
 		panel.add(btnToDashboard);
 		
-		JLabel btnToDashboardTxt = new JLabel("Tornar al inici");
+		JLabel btnToDashboardTxt = new JLabel("Tornar a l'inici");
 		btnToDashboardTxt.setIcon(new ImageIcon(MachinesPanel.class.getResource("/com/alumne/images/left-chevron.png")));
 		btnToDashboardTxt.setForeground(Color.BLACK);
 		btnToDashboardTxt.setFont(new Font("Open Sans", Font.PLAIN, 15));

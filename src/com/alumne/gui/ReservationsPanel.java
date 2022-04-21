@@ -1,42 +1,47 @@
 package com.alumne.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
 
-public class ReservationsPanel extends JFrame {
+import java.awt.Font;
 
-	private JPanel contentPane;
+import javax.swing.ImageIcon;
 
+public class ReservationsPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	
+	public JPanel btnToDashboard;
+	
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ReservationsPanel frame = new ReservationsPanel();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
+	 * Create the panel.
 	 */
 	public ReservationsPanel() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 0, 760, 563);
+		add(panel);
+		panel.setLayout(null);
+		
+		btnToDashboard = new JPanel();
+		btnToDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		btnToDashboard.setBackground(Color.WHITE);
+		btnToDashboard.setBounds(13, 12, 138, 34);
+		panel.add(btnToDashboard);
+		
+		JLabel btnToDashboardTxt = new JLabel("Tornar a l'inici");
+		btnToDashboardTxt.setIcon(new ImageIcon(ReservationsPanel.class.getResource("/com/alumne/images/left-chevron.png")));
+		btnToDashboardTxt.setForeground(Color.BLACK);
+		btnToDashboardTxt.setFont(new Font("Open Sans", Font.PLAIN, 15));
+		btnToDashboard.add(btnToDashboardTxt);
+		
+		JLabel title = new JLabel("Reserves");
+		title.setFont(new Font("Open Sans", Font.BOLD, 20));
+		title.setBounds(26, 58, 96, 28);
+		panel.add(title);
+						
 	}
-
 }
